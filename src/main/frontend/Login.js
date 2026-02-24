@@ -5,8 +5,8 @@ import { jwtDecode } from "jwt-decode"; // <-- fixed import
 
 const BACKEND_URL =
   process.env.NODE_ENV === "production"
-    ? "https://job-listing-portal-gy6b.onrender.com/api/auth" // Render backend URL
-    : "http://localhost:5000/api/auth"; // Local dev
+    ? "https://job-listing-portal-gy6b.onrender.com" // Render backend URL
+    : "http://localhost:5000"; // Local dev
 
 export default function Login() {
   const navigate = useNavigate();
