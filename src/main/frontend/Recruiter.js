@@ -4,8 +4,8 @@ import './Login.css';
 
 const BACKEND_URL =
   process.env.NODE_ENV === "production"
-    ? "https://job-listing-portal-gy6b.onrender.com" // Render backend URL
-    : "http://localhost:5000";
+    ? "https://job-listing-portal-gy6b.onrender.com/api/auth" // Render backend URL
+    : "http://localhost:5000/api/auth";
 
 export default function Recruiter() {
   const navigate = useNavigate();
