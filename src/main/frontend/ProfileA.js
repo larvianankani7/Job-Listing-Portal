@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import { useSearchParams, useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const STORAGE_KEY = "applicant_profile_full";
 
@@ -12,20 +12,14 @@ axios.interceptors.request.use(config => {
   return config;
 });
 
-const BACKEND_URL = "http://localhost:5000";
-
 export default function ProfileA() {
   const [searchParams] = useSearchParams();
-  const { id } = useParams();
 
   const viewOnly =
     searchParams.get("viewOnly") === "true" ||
     searchParams.get("from") === "recruiter";
 
-  const userId = id || localStorage.getItem("userId");
-
   const [isEditing, setIsEditing] = useState(false);
-  const [resumeFile, setResumeFile] = useState(null);
 
   const [profile, setProfile] = useState({
     name: "Alice Doe",
