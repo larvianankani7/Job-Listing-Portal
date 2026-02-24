@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
-const BACKEND_URL = "http://localhost:5000/api/auth";
+const BACKEND_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://job-listing-portal-gy6b.onrender.com" // Render backend URL
+    : "http://localhost:5000";
 
 export default function Applicant() {
   const navigate = useNavigate();
