@@ -34,11 +34,12 @@ app.use(cors({
   origin: (origin, callback) => {
     const whitelist = [
       "http://localhost:3000",
+      "http://localhost:5000",
       "http://localhost:5173",
       "http://localhost:3001",
       "http://localhost:3002",
       "http://192.168.1.3:3002",
-      "https://job-listing-portal-web.vercel.app",
+      "https://job-listing-portal-silk.vercel.app/",
     ];
     if (!origin || whitelist.includes(origin)) {
       callback(null, true);
